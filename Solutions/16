@@ -1,0 +1,36 @@
+// with iteration
+class Main{
+    public static void main(String[] args){
+       int B = 3;
+       int E = 5;
+       
+       int ans = 1;
+       
+       for(int i = 1; i<=E; i++){
+           ans*=B;
+       }
+       
+       System.out.println(ans);
+    }   
+}
+
+
+// with recursion
+class Main{
+    public static void main(String[] args){
+       int B = 3;
+       int E = 5;
+       
+       int ans = powerOfNo(B,E);
+       System.out.println(ans);
+    }
+    
+    public static int powerOfNo(int num, int power){
+        if(power==0){
+            return 1;
+        }
+        
+        return (num * (powerOfNo(num,power-1)));
+    }
+}
+
