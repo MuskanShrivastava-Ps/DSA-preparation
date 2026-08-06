@@ -1,0 +1,40 @@
+// with for loop
+class Main {
+    public static void main(String[] args) {
+        int n = 5;
+        
+        int ans = 1;
+        
+        for(int i = 1; i<=n; i++){
+            ans*=i;
+        }
+        
+        System.out.println(ans);
+    }
+}
+
+
+
+// with While loop
+class Main {
+    public static void main(String[] args) {
+       int n = 10;
+       int factor = 0;
+       int i = 2;
+       
+       while(true){
+           if(n%i==0){
+               factor = i;
+               break;
+           }
+           i++;
+       }
+       
+       if(factor==n){
+           System.out.println("Prime Number");
+       }
+       else{
+           System.out.println("Smallest Factor is: " + factor);
+       }
+    }
+}
