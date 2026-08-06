@@ -1,0 +1,21 @@
+class Main{
+    public static void main(String[] args){
+       int A = -1;
+       int B = -2;
+       int C = -6;
+    
+       int largest = Integer.MIN_VALUE;
+       
+       if(A>=B && A>=C){
+           largest = A;
+       }
+       else if(B>A && B>C){
+           largest = B;
+       }
+       else{
+           largest = C;
+       }
+       
+       System.out.println(largest);
+    }
+}
