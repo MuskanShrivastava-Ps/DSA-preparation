@@ -1,0 +1,22 @@
+class Main {
+    public static void main(String[] args) {
+      int n = 7;
+      int squareRoot = (int) Math.sqrt(n);
+      boolean isPrime = false;
+      
+      for(int i = 2; i<squareRoot; i++){
+          if(n%i==0){
+              isPrime = true;
+              break;
+          }
+      }
+      
+      if(isPrime==false){
+          System.out.println("Prime no.");
+      }
+      else{
+          System.out.println("Not Prime No.");
+      }
+      
+    }
+}
