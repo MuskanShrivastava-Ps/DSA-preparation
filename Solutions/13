@@ -1,0 +1,28 @@
+class Main{
+    public static void main(String[] args){
+       int n = 153;
+       
+       int num = n;
+       int count = 0;
+       int ans = 0;
+       
+       while(num>0){
+            count++;
+            num = num/10;
+       }
+       
+       num = n;
+       while(num>0){
+            int rem = num%10;
+            ans = ans + (int) Math.pow(rem,count);
+            num/=10;
+       }
+       
+       if(ans==n){
+           System.out.println("Armstrong");
+       }
+       else{
+           System.out.println("Not Armstrong");
+       }
+    }   
+}
