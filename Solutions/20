@@ -1,0 +1,35 @@
+class Main{
+    public static void main(String[] args){
+        int A = 11;
+        int B = 1;
+        int C = 10;
+        
+        boolean isValid = false;
+        
+        if(A+B>C){
+            isValid = true;
+        }
+        else if(B+C>A){
+            isValid = true;
+        }
+        else if(C+A>B){
+            isValid = true;
+        }
+        
+        
+        if(isValid){
+            if(A==B && B==C){
+                System.out.println("Equilateral");
+            }
+            else if(A==B || B==C || C==A){
+                System.out.println("Isosceles ");
+            }
+            else{
+                System.out.println("Scalene");
+            }
+        }
+        else{
+            System.out.println("Not valid");
+        }
+    }
+}
