@@ -1,17 +1,28 @@
-lass Main{
+class Main{
     public static void main(String[] args){
         int A = 10;
-        int op = '+';
-        int B = 5;
+        int op = '/';
+        int B = 0;
         
         int ans = 1;
         
-        if(op=='/' && B==0){
-            System.out.println("Error Divisible by zero");
+        if(op=='/' &&  B==0){
+            System.out.println("Error Division by zero");
         }
         else{
-            ans = A op B;
-            Syatem.out.println()
+            if(op=='+'){
+                ans = A + B;
+            }
+            else if(op=='-'){
+                ans = A - B;
+            }
+            else if(op=='*'){
+                ans = A * B;
+            }
+            else{
+                ans = A % B; 
+            }
+            System.out.println(ans);
         }
     }
 }
