@@ -1,0 +1,29 @@
+class Main{
+    public static void main(String[] args){
+        String str = "A man a plan a canal Panama";
+        
+        String s = str.toLowerCase();
+        StringBuilder sb = new StringBuilder();
+        
+        for(int i = 0; i<s.length(); i++){
+            char ch = s.charAt(i);
+            if(ch==' '){
+                continue;
+            }
+            else{
+                sb.append(ch);
+            }
+        }
+        
+        String newStr = sb.toString();
+        sb.reverse();
+        
+        if(newStr.equals(sb.toString())){
+            System.out.println("Palindrome");
+        }
+        else{
+            System.out.println("Not Palindrome");
+        }
+        
+    }
+}
