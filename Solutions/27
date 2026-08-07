@@ -1,0 +1,45 @@
+// with for loop
+class Main{
+    public static void main(String[] args){
+      int A = 5;
+      int B = 5;
+      int sum = 0;
+      
+      for(int i = A; i<=B; i++){
+          if(i%2!=0){
+              sum+=i;
+          }
+      }
+      
+      System.out.println(sum);
+    }
+}
+
+
+// wih 2 step move
+class Main{
+    public static void main(String[] args){
+      int A = 1;
+      int B = 10;
+      int sum = 0;
+      int odd = -1;
+      
+      for(int i = A; i<=B; i++){
+          if(i%2!=0){
+              odd = i;
+              break;
+          }
+      }
+      
+      if(odd==-1){
+          System.out.println("No odd numbers");
+      }
+      else{
+          for(int j = odd; j<=B; j+=2){
+              sum+=j;
+          }
+          System.out.println("Sum: "+sum);
+      }
+    }
+}
+
