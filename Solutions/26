@@ -1,12 +1,19 @@
 class Main{
     public static void main(String[] args){
-      int A = 10;
-      int B = 30;
+      int A = 14;
+      int B = 16;
+      
+      boolean oneElement = false;
       
       for(int i = A+1; i<B; i++){
           if(isPrime(i)){
+              oneElement = true;
               System.out.print(i+" ");
           }
+      }
+      
+      if(oneElement==false){
+          System.out.println("None");
       }
     }
     
