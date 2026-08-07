@@ -1,0 +1,20 @@
+class Main{
+    public static void main(String[] args){
+        int A = 17;
+        int C = 1;
+        int D = 0;
+        
+        if(A<18){
+            System.out.println("Not eligible");
+        }
+        else if(C==0){
+            System.out.println("Not a citizen");
+        }
+        else if(D==1){
+            System.out.println("Disqualified");
+        }
+        else{
+            System.out.println("Eligible");
+        }
+    }
+}
