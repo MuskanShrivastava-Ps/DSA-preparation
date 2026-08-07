@@ -1,0 +1,45 @@
+import java.util.HashMap;
+
+class Main{
+    public static void main(String[] args){
+       String A = "listen";
+       String B = "silent";
+       
+       if(A.length()!=B.length()){
+           System.out.println("Not anagram");
+       }
+       else{
+       HashMap<Character,Integer> map = new HashMap<>();
+       for(int i = 0; i<A.length(); i++){
+           char ch = A.charAt(i);
+           map.put(ch,map.getOrDefault(ch,0)+1);
+       }
+       
+       boolean anagram = true;
+       
+       for(int j = 0; j<B.length(); j++){
+           char ch = B.charAt(j);
+           if(map.containsKey(ch)){
+               int value = map.get(ch)-1;
+               if(value==0){
+                   map.remove(ch);
+               }
+               else{
+                   map.put(ch,value);
+               }
+           }
+           else{
+               anagram = false;
+               break;
+           }
+       }
+       
+       if(anagram==false){
+           System.out.println("Not anagram");
+       }
+       else{
+           System.out.println("anagram");
+       }
+       }
+    }
+}
