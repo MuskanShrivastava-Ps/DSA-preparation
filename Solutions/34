@@ -1,0 +1,21 @@
+class Main{
+    public static void main(String[] args){
+       int n = 18;
+       int num = n;
+       
+       int sum = 0;
+       
+       while(num>0){
+           int rem = num%10;
+           sum+=rem;
+           num = num/10;
+       }
+       
+       if(n%sum==0){
+           System.out.println("Harshad");
+       }
+       else{
+           System.out.println("Not Harshad");
+       }
+}
+}
