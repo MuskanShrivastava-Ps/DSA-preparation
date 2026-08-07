@@ -1,0 +1,34 @@
+class Main{
+    public static void main(String[] args){
+        String str = "HELLO";
+        int k = 3;
+        
+        String encoding = encoder(str,k);
+        String decoding = decoder(str,k);
+        
+        System.out.println("encoding: " + encoding);
+        System.out.println("decoding: " + decoding);
+    }
+    
+    public static String encoder(String s, int k){
+        StringBuilder sb = new StringBuilder();
+        
+        for(int i = 0; i<s.length(); i++){
+            char ch = s.charAt(i);
+            char newch = (char) ((((ch-'A') + k) % 26)+'A');
+            sb.append(newch);
+        }
+        return sb.toString();
+    }
+    
+    public static String decoder(String s, int k){
+        StringBuilder sb = new StringBuilder();
+        
+        for(int i = 0; i<s.length(); i++){
+            char ch = s.charAt(i);
+            char newch = (char) ('A' + ((((ch-'A')-k)+26) % 26));
+            sb.append(newch);
+        }
+        return sb.toString();
+    }
+}
