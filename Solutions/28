@@ -1,0 +1,33 @@
+// with loop
+class Main{
+    public static void main(String[] args){
+       int n = 12345;
+       int nextn = 0;
+       
+       while(n>9){
+           while(n>0){
+               int rem = n%10;
+               nextn+=rem;
+               n = n/10;
+           }
+           n = nextn;
+           nextn = 0;
+       }
+       
+       System.out.println(n);
+    }
+}
+
+// with formula
+class Main{
+    public static void main(String[] args){
+       int n = 9875;
+       
+       if(n%9==0){
+           System.out.println("9");
+       }
+       else{
+           System.out.println(n%9);
+       }
+}
+}
