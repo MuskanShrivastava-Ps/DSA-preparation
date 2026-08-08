@@ -1,0 +1,31 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class Main{
+    public static void main(String[] args){
+        int[] arr = {1,2,2,4};
+        int n = arr.length;
+        
+        long expectedSum = (n * (n+1))/2;
+        long expectedSqSum = (long) (n*(n+1)*(2L * n+1)/6);
+        
+        long actualSum = 0;
+        long actualSqSum = 0;
+        
+        for(int num : arr){
+            actualSum+=num;
+            actualSqSum+=(long)num*num;
+        }
+        
+        long diff1 = expectedSum - actualSum;
+        long diff2 = expectedSqSum - actualSqSum;
+        
+        long sum = diff2/diff1;
+        
+        long missing = (diff1+sum)/2;
+        long duplicate = sum - missing;
+        
+        System.out.println("Missing No = "+ missing + " , " + "Duplicate No = " + duplicate);
+    }
+}
+
