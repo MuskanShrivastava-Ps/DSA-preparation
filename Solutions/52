@@ -1,0 +1,31 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.List;
+import java.util.ArrayList;
+
+class Main {
+    public static void main(String[] args) {
+        int N = 12;
+        int num = N;
+        
+        List<Integer> list = new ArrayList<>();
+        
+        while(num%2==0){
+             list.add(2);
+             num/=2;
+        }
+        
+        for(int i = 3; i*i<=num; i+=2){
+            while(num%i==0){
+                list.add(i);
+                num/=i;
+            }
+        }
+        
+        if(num>1){
+            list.add(num);
+        }
+        
+        System.out.println(list);
+    }
+}
