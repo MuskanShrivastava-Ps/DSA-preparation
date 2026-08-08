@@ -1,0 +1,24 @@
+class Main{
+    public static void main(String[] args) {
+        int[] arr = {3,7,1,9,4};
+        
+        int max = arr[0];
+        int min = arr[0];
+        int sum = 0;
+        int average = 0;
+        
+        for(int i = 0; i<arr.length; i++){
+            if(arr[i]>max){
+                max = arr[i];
+            }
+            if(arr[i]<min){
+                min = arr[i];
+            }
+            sum+=arr[i];
+        }
+        
+        average = sum/arr.length;
+        
+        System.out.println("Sum: "+sum+" , " + "Max: "+max+" , " + "Min: "+min+" , "+"Avarage: "+average);
+    }
+}
