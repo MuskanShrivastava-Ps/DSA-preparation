@@ -1,0 +1,46 @@
+//first-method
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class Main {
+    public static void main(String[] args) {
+        int n = 13;
+        int num = n;
+        int count = 0;
+        
+        while(num>0){
+             int result = num&1;
+             if(result==1){
+                 count++;
+             }
+             num = num>>1;
+        }
+        
+        System.out.print(count);
+    }
+}
+
+
+
+//Second-method
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class Main {
+    public static void main(String[] args) {
+        int n = 13;
+        int num = n;
+        
+        int count = 0;
+        
+        while(num>0){
+            num = num&(num-1);
+            count++;
+        }
+        
+        System.out.print(count);
+    }
+}
+
