@@ -1,0 +1,26 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+class Main{
+    public static void main(String[] args){
+        int n = 10;
+        int r = 3;
+        
+        int denominator = 1;
+        
+        for(int i = 1; i<=r; i++){
+            denominator*=n;
+            n = n-1;
+        }
+        
+        int numerator = 1;
+        
+        for(int i = 1; i<=r; i++){
+            numerator*=i;
+        }
+        
+        int ans = denominator/numerator;
+        
+        System.out.println(ans);
+        
+    }
+}
