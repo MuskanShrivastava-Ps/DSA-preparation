@@ -1,0 +1,42 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class Main{
+    public static void main(String[] args){
+        int n = 12;
+        
+        int higest = Left(n);
+        int lowest = Right(n);
+        
+        
+        System.out.print("Higest: "+higest+" , ");
+        System.out.print("Lowest: "+lowest);
+    
+    }
+    
+    public static int Left(int n){
+        int num = n;
+        
+        int position = 0;
+        
+        while(num>0){
+            num = num>>1;
+            position++;
+        }
+        
+        return position-1;
+    }
+    
+    public static int Right(int n){
+        int num = n & (-n);
+        int position = 0;
+        
+        while(num>0){
+            num = num>>1;
+            position++;
+        }
+        
+        return position-1;
+    }
+}
+
