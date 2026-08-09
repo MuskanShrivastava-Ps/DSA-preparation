@@ -1,0 +1,28 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+class Main{
+    public static void main(String[] args){
+        int n = 25;
+        
+        int sqRoot = (int) Math.sqrt(n);
+        int cbRoot = (int) Math.cbrt(n);
+        
+        if(sqRoot*sqRoot==n){
+            System.out.print("Perfect SquareRoot: "+sqRoot);
+        }
+        else{
+            System.out.print("No Perfect squareRoot");
+        }
+        
+        System.out.print(" , ");
+        
+        
+        if(cbRoot*cbRoot*cbRoot==n){
+            System.out.print("Perfect CubeRoot: "+cbRoot);
+        }
+        else{
+            System.out.print("No Perfect cubeRoot");
+        }
+    }
+}
+
