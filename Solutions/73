@@ -1,0 +1,68 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class Main {
+    public static void main(String[] args) {
+        double pie = 3.14;
+        
+        int r = 7;
+        int l = 10;
+        int w = 4;
+        
+        int a = 3;
+        int b = 4;
+        int c = 5;
+        
+        String shape = "circle";
+        
+        if(shape.equals("circle")){
+            double area = circlearea(pie,r);
+            double perimeter = circleperimeter(pie,r);
+            System.out.print("Area: "+area+" , ");
+            System.out.print("Perimeter: "+perimeter);
+        }
+        else if(shape.equals("triangle")){
+            double area = trianglearea(a,b,c);
+            int perimeter = triangleperimeter(a,b,c);
+            System.out.print("Area: "+area+" , ");
+            System.out.print("Perimeter: "+perimeter);
+        }
+        else{
+            int area = rectanglearea(l,w);
+            int perimeter = rectangleperimeter(l,w);
+            System.out.print("Area: "+area+" , ");
+            System.out.print("Perimeter: "+perimeter);
+        }
+    }
+    
+    public static double circlearea(double pie, int r){
+        double area = pie*Math.pow(r,2);
+        return area;
+    }
+    
+    public static double circleperimeter(double pie, int r){
+        double perimeter = 2 * pie * r;
+        return perimeter;
+    }
+    
+    public static int triangleperimeter(int a, int b, int c){
+        int perimeter = a + b + c;
+        return perimeter;
+    }
+    
+    public static int rectangleperimeter(int l, int w){
+        int perimeter = 2 * (l+w);
+        return perimeter;
+    }
+    
+    public static double trianglearea(int a, int b, int c){
+        int s = (a+b+c)/2;
+        double area = Math.sqrt(s*(s-a)*(s-b)*(s-c));
+        return area;
+    }
+    
+    public static int rectanglearea(int l, int w){
+        int area = l * w;
+        return area;
+    }
+}
