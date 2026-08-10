@@ -1,0 +1,19 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class Main{
+    public static void main(String[] args){
+        int x1 = 0;
+        int x2 = 3;
+        int y1 = 0;
+        int y2 = 4;
+        
+        double Euclidean = Math.sqrt(Math.pow(x2-x1,2) + Math.pow(y2-y1,2));
+        
+        int Pythagoren = (x2-x1) + (y2-y1);
+        
+        System.out.print("Euclidean: "+Euclidean+" , ");
+        System.out.print("Pythagoren: "+Pythagoren);
+       
+    }
+}
