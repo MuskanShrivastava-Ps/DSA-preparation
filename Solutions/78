@@ -1,0 +1,67 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class Main {
+    public static void main(String[] args) {
+        int[][] A = {{1,2},{3,4}};
+        int[][] B = {{5,6},{7,8}};
+        int k = 2;
+        
+        int M = A.length;
+        int N = A[0].length;
+        
+        int[][] AB = new int[M][N];
+        
+        for(int i = 0; i<M; i++){
+            for(int j = 0; j<N; j++){
+                AB[i][j] = A[i][j] + B[i][j];
+            }
+        }
+        
+        int[][] ABneg = new int[M][N];
+        
+        for(int i = 0; i<M; i++){
+            for(int j = 0; j<N; j++){
+                ABneg[i][j] = A[i][j] - B[i][j];
+            }
+        }
+        
+        int[][] multiply = new int[M][N];
+        
+        for(int i = 0; i<M; i++){
+            for(int j = 0; j<N; j++){
+                multiply[i][j] = k*A[i][j];
+            }
+        }
+        
+        System.out.println("A+B");
+        
+        for(int i = 0; i<M; i++){
+            for(int j = 0; j<N; j++){
+                System.out.print(AB[i][j]+" ");
+            }
+            System.out.println();
+        }
+        
+        System.out.println("A-B");
+        
+        for(int i = 0; i<M; i++){
+            for(int j = 0; j<N; j++){
+                System.out.print(ABneg[i][j]+" ");
+            }
+            System.out.println();
+        }
+        
+        System.out.println("K*A");
+        
+        for(int i = 0; i<M; i++){
+            for(int j = 0; j<N; j++){
+                System.out.print(multiply[i][j]+" ");
+            }
+            System.out.println();
+        }
+        
+        
+        
+    }
+}
