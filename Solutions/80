@@ -1,0 +1,58 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+class Main{
+    public static void main(String[] args){
+        int[][] matrix = {{8,1,6},{3,5,7},{4,9,2}};
+        int n = matrix.length;
+        
+        int constval = (int) (n*(Math.pow(n,2)+1)/2);
+        
+        boolean isTrue = true;
+        
+        if(isTrue){
+            int diagonal = 0;
+            for(int i = 0; i<n; i++){
+                int row = 0;
+                for(int j = 0; j<n; j++){
+                    if(i==j){
+                        diagonal+=matrix[i][j];
+                    }
+                    row+=matrix[i][j];
+                }
+                if(row!=constval){
+                    isTrue = false;
+                    break;
+                }
+            }
+            if(isTrue==true && diagonal!=constval){
+                isTrue = false;
+            }
+        }
+        
+        if(isTrue){
+            int diagonal = 0;
+            for(int i = 0; i<n; i++){
+                int colSum = 0;
+                diagonal+=matrix[i][n-1-i];
+                for(int j = 0; j<n; j++){
+                    colSum+=matrix[j][i];
+                }
+                if(colSum!=constval){
+                    isTrue = false;
+                    break;
+                }
+            }
+            
+            if(isTrue==true && diagonal!=constval){
+                isTrue = false;
+            }
+        }
+        
+        if(isTrue==false){
+            System.out.println("Not Magic Square");
+        }
+        else{
+            System.out.println("Magic Square");
+        }
+    }
+}
