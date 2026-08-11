@@ -1,0 +1,35 @@
+//with 3 nested loops
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+class Main{
+    public static void main(String[] args){
+        int n = 10;
+        List<List<Integer>> list = new ArrayList<>();
+
+        for(int i = 1; i<=n-2; i++){
+            for(int j = i+1; j<=n-1; j++){
+                for(int k = j+1; k<=n; k++){
+                    int a = i;
+                    int b = j;
+                    int c = k;
+
+                    if(c<=n && (int)Math.pow(a,2)+(int)Math.pow(b,2)==(int)Math.pow(c,2)){
+                        list.add(Arrays.asList(a,b,c));
+                    }
+                }
+            }
+        }
+
+        for(List<Integer> list2 : list){
+            System.out.print(list2);
+        }
+    }
+}
+
+
+
+
+
+
