@@ -1,0 +1,49 @@
+import java.util.*;
+
+class Main{
+    public static void main(String[] args){
+        int n = 196;
+        int num = n;
+
+        boolean isLychrel = true;
+
+        for(int i = 1; i<=50; i++){
+            int nreverse = reverse(num);
+            int sum = nreverse + num;
+            if(isPalindrome(sum)){
+              System.out.println("Not Lychrel");
+              isLychrel = false;
+              break;
+            }
+            else{
+                num = sum;
+            }
+        }
+
+        if(isLychrel==true){
+          System.out.println("Lychrel");
+        }
+        
+    }   
+
+    public static int reverse(int n){
+         int sum = 0;
+
+         while(n>0){
+            int rem = n%10;
+            sum = sum*10 + rem;
+            n = n/10;
+         }
+
+         return sum;
+    }
+
+    public static boolean isPalindrome(int n){
+        int num = n;
+        int reverse = reverse(n);
+        if(num==reverse){
+          return true;
+        }
+        return false;
+    }
+}
