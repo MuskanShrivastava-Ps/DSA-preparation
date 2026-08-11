@@ -1,0 +1,63 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class Main {
+    public static void main(String[] args) {
+        int N = 22;
+        int num = N;
+        int sum = 0;
+
+        while(num>0){
+            int rem = num%10;
+            sum+=rem;
+            num/=10;
+        }
+
+        num = N;
+        int sumofPrime = 0;
+
+        while(num%2==0){
+            sumofPrime+=2;
+            num = num/2;
+        }
+
+        for(int i = 3; i*i<=num; i+=2){
+            while(num%i==0){
+                int val = i;
+                if(i>=11){
+                    while(val>0){
+                        int rem = val%10;
+                        sumofPrime+=rem;
+                        val = val/10;
+                    }
+                }
+                else{
+                    sumofPrime+=i;
+                }
+                num = num/i;
+            }
+        }
+
+        if(num>1){
+            if(num>9){
+            int val = num;
+            while(val>0){
+                sumofPrime+=val%10;
+                val = val/10;
+            }
+            }
+            else{
+                sumofPrime+=num;
+            }
+        }
+
+        if(sumofPrime==sum){
+            System.out.println("Smith Number");
+        }
+        else{
+            System.out.println("Not Smith Number");
+        }
+        
+
+    }
+}
