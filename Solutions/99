@@ -1,0 +1,36 @@
+import java.util.*;
+
+class Main{
+    public static void main(String[] args){
+      int n = 500;
+      
+      for(int i = 1; i<=n; i++){
+          if(armstrong(i)){
+            System.out.print(i+" ");
+          }
+      }
+
+    }
+
+    public static boolean armstrong(int i){
+
+      int num = i;
+      int ans = 0;
+      int power = 0;
+
+      String str = Integer.toString(i);
+      power = str.length();
+
+      for(int j = 0; j<str.length(); j++){
+        int k = str.charAt(j) - '0';
+        ans = ans + (int)Math.pow(k,power);
+      }
+
+      if(num==ans){
+        return true;
+      }
+
+      return false;
+
+    }
+}
