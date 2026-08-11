@@ -1,0 +1,36 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class Main{
+    public static void main(String[] args){
+        int n = 50;
+
+        int a = 0;
+        int b = 0;
+
+        for(int i = 2; i<=n/2; i++){
+            if(isPrime(i)){
+            int val = n - i;
+            if(isPrime(val)){
+                a = i;
+                b = val;
+                break;
+            }
+            }
+        }
+
+        System.out.print(a+"+"+b);
+    }
+
+    public static boolean isPrime(int n){
+         
+        for(int i = 2; i*i<=n; i++){
+            if(n%i==0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+}
