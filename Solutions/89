@@ -3,39 +3,20 @@
 
 class Main {
     public static void main(String[] args) {
-        int n = 511;
+        int N = 27;
+        int num = N;
+        int step = 0;
         
-        int num = n+1;
-        
-        int i = 1;
-        int power = 0;
-        
-        while(i<num){
-             power++;
-             i = i*2;
+        while(num>1){
+             if(num%2==0){
+                 num = num/2;
+             }
+             else{
+                 num = (num * 3)+1;
+             }
+             step++;
         }
         
-        if(i==num){
-            if(isPrime(power) && isPrime(n)){
-                System.out.print("Mersenee Prime");
-            }
-            else{
-                System.out.print("Not Mersenee Prime");
-            }
-        }
-        else{
-                System.out.print("Not Mersenee Prime");
-        }
-    }
-    
-    public static boolean isPrime(int n){
-        
-        for(int i = 2; i*i<=n; i++){
-            if(n%i==0){
-                return false;
-            }
-        }
-        
-        return true;
+        System.out.println(step);
     }
 }
