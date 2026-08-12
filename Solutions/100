@@ -1,0 +1,260 @@
+import java.util.*;
+
+public class Main{
+    public static void main(String[] args){
+      int n = 153;
+
+      boolean prime = prime(n);
+      boolean armstrong = armstrong(n);
+      boolean palindrome = palindrome(n);
+      boolean harshed = harshed(n);
+      boolean happy = happy(n);
+      int euclers = Euclers(n);
+      int collatz = collatz(n);
+      boolean perfect = perfect(n);
+      
+      if(!prime){
+        System.out.print("Prime: No "+" , ");
+      }
+      else{
+        System.out.print("Prime: Yes "+" , ");
+      }
+
+
+
+      if(!armstrong){
+        System.out.print("Armstrong: No "+" , ");
+      }
+      else{
+        System.out.print("Armstrong: Yes "+" , ");
+      }
+
+      if(!perfect){
+        System.out.print("Perfect: No "+" , ");
+      }
+      else{
+        System.out.print("Perfect: Yes "+" , ");
+      }
+
+      if(!palindrome){
+        System.out.print("Palindrome: No "+" , ");
+      }
+      else{
+        System.out.print("Palindrome: Yes "+" , ");
+      }
+
+      if(!happy){
+        System.out.print("Happy: No "+" , ");
+      }
+      else{
+        System.out.print("Happy: Yes "+" , ");
+      }
+
+      if(!harshed){
+        System.out.print("Harshed: "+ harshed+" "+" , ");
+      }
+      else{
+         System.out.print("Harshed: No "+" , ");
+      }
+    
+      if(euclers!=0){
+        System.out.print("Euclers: "+euclers+" "+" , ");
+      }
+      else{
+        System.out.print("Euclers: No "+" , ");
+      }
+
+      if(collatz!=0){
+        System.out.print("Collatz: "+collatz+" "+" , ");
+      }
+      else{
+        System.out.print("Collatz: No "+" , ");
+      }
+
+    }
+
+    public static boolean prime(int n){
+      int squareRoot = (int) Math.sqrt(n);
+      boolean isPrime = true;
+      
+      for(int i = 2; i<=squareRoot; i++){
+          if(n%i==0){
+              isPrime = false;
+              break;
+          }
+      }
+      
+      if(isPrime==true){
+          return true;
+      }
+      else{
+          return false;
+      }
+    }
+
+    public static boolean armstrong(int n){
+       int num = n;
+       int count = 0;
+       int ans = 0;
+       
+       while(num>0){
+            count++;
+            num = num/10;
+       }
+       
+       num = n;
+       while(num>0){
+            int rem = num%10;
+            ans = ans + (int) Math.pow(rem,count);
+            num/=10;
+       }
+       
+       if(ans==n){
+          return true;
+       }
+       else{
+          return false;
+       }
+    }
+
+    public static boolean palindrome(int n){
+       int num = n;
+       int reverse = 0;
+    
+       while(num>0){
+           int rem = num%10;
+           reverse = reverse * 10 + rem;
+           num = num/10;
+       }
+       
+       if(n==reverse){
+          return true;
+       }
+       else{
+        return false;
+       }
+    }
+
+    public static boolean harshed(int n){
+       int num = n;
+       
+       int sum = 0;
+       
+       while(num>0){
+           int rem = num%10;
+           sum+=rem;
+           num = num/10;
+       }
+       
+       if(n%sum==0){
+          return true;
+       }
+       else{
+          return false;
+       }
+    }
+
+    public static boolean happy(int n){
+    int num = n;
+    List<Integer> list = new ArrayList<>();
+
+    while(num!=1){
+      int sum = 0;
+      int val = num;
+        while(val>0){
+          int rem = val%10;
+          sum+=(int)Math.pow(rem,2);
+          val = val/10;
+        }
+        num = sum;
+        if(list.contains(num)){
+          return false;
+        }
+        list.add(num);
+    }
+
+    return true;
+    }
+
+
+    public static int Euclers(int N){
+        
+        int ans = 0;
+        
+        if(prime(N)){
+            ans = N-1;
+        }
+        else{
+            List<Integer> list = primeFactors(N);
+            ans = N;
+            
+            for(int i = 0; i<list.size(); i++){
+                ans = ans - ans/list.get(i);
+            }
+        }
+        return ans;
+    }
+    
+    public static List<Integer> primeFactors(int n){
+        List<Integer> list = new ArrayList<>();
+        int num = n;
+        
+        while(num%2==0){
+             if(!list.contains(2)){
+                 list.add(2);
+             }
+             num/=2;
+        }
+        
+        for(int i = 3; i*i<=num; i+=2){
+            while(num%i==0){
+                if(!list.contains(i)){
+                 list.add(i);
+                }
+                num = num/i;
+            }
+        }
+        
+        if(num>1){
+            list.add(num);
+        }
+        
+        return list;
+    }
+
+
+    public static int collatz(int N){
+        long num = N;
+        int step = 0;
+        
+        while(num>1){
+             if(num%2==0){
+                 num = num/2;
+             }
+             else{
+                 num = ((long)num * 3)+1;
+             }
+             step++;
+        }
+        
+        return step;
+    }
+
+
+    public static boolean perfect(int n){
+      int ans = 0;
+      
+      for(int i = 1; i<=n/2; i++){
+          if(n%i==0){
+              ans+=i;
+          }
+      }
+      
+      if(ans==n){
+          return true;
+      }
+      else{
+          return false;
+      }
+    }
+}
