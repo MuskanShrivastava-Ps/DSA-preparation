@@ -1,0 +1,58 @@
+import java.util.*;
+
+public class Main{
+    public static void main(String[] args){
+    int n = 4;
+
+    int count = 0;
+
+    char[][] matrix = new char[n][n];
+
+    int left = 0;
+    int right = n-1;
+    int top = 0;
+    int bottom = n-1;
+
+    while(left<=right &&  top<=bottom){
+
+      for(int i = left; i<=right; i++){
+        char ch = (char) ('A' + count);
+        matrix[top][i] = ch;
+        count++;
+      }
+      top++;
+
+      for(int j = top; j<=bottom; j++){
+        char ch = (char) ('A'+ count);
+        matrix[j][right] = ch;
+        count++;
+      }
+      right--;
+
+      for(int k = right; k>=left; k--){
+        char ch = (char) ('A'+count);
+        matrix[bottom][k] = ch;
+        count++;
+      }
+      bottom--;
+
+      for(int l = bottom; l>=top; l--){
+        char ch = (char) ('A'+count);
+        matrix[l][left] = ch;
+        count++;
+      }
+      left++;
+
+    }
+
+
+    for(int i = 0; i<n; i++){
+      for(int j = 0; j<n; j++){
+        System.out.print(matrix[i][j]+" ");
+      }
+      System.out.println();
+    }
+
+    }
+}
+
