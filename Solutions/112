@@ -1,0 +1,34 @@
+import java.util.*;
+
+public class Main{
+    public static void main(String[] args){
+      List<Integer> list = new ArrayList<>();
+
+      push(list,1);
+      push(list,2);
+      push(list,3);
+      int pop = pop(list);
+      int peek = peek(list);
+      int size = size(list);
+
+      System.out.print("Pop:"+pop+" "+"Peek:"+peek+" "+"Size:"+size);
+    }
+
+    public static void push(List<Integer> list, int n){
+      list.add(n);
+    }
+
+    public static int pop(List<Integer> list){
+      int value = list.get(list.size()-1);
+      list.remove(list.size()-1);
+      return value;
+    }
+
+    public static int peek(List<Integer> list){
+      return list.get(list.size()-1);
+    }
+
+    public static int size(List<Integer>list){
+      return list.size();
+    }
+}
