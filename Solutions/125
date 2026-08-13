@@ -1,0 +1,32 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+// PS : The name of the public class has to be Main for the code to work
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int[] num = {1,2,3};
+        List<List<Integer>> list2 = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
+        int n =num.length;
+
+        helper(num,list2,list,n);
+        for(List<Integer> val : list2){
+            System.out.println(val);
+        }
+    }
+
+    public static void helper(int[] num, List<List<Integer>> list2, List<Integer> list, int n){
+        if(list.size()==n){
+            list2.add(new ArrayList<>(list));
+            return;
+        }
+
+        for(int i = 0; i<n; i++){
+            if(!list.contains(num[i])){
+                list.add(num[i]);
+                helper(num,list2,list,n);
+                list.remove(list.size()-1);
+            }
+        }
+    }
+}
