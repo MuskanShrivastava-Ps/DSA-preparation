@@ -1,0 +1,44 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+// PS : The name of the public class has to be Main for the code to work
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+         String str = "{[[]}";
+
+        Stack<Character> stack = new Stack<>();
+        boolean flag = true;
+        
+        for(int i = 0; i<str.length(); i++){
+            char ch = str.charAt(i);
+            if(str.charAt(i)=='{' || str.charAt(i)=='[' || str.charAt(i)=='('){
+                stack.push(ch);
+            }
+            else if(ch=='}' && !stack.isEmpty()){
+                if(stack.pop()!='{'){
+                    flag = false;
+                    break;
+                }
+            }
+            else if(ch==']' && !stack.isEmpty()){
+                if(stack.pop()!='['){
+                    flag = false;
+                    break;
+                }
+            }
+            else{
+                if(!stack.isEmpty() && stack.pop()!='('){
+                    flag = false;
+                    break;
+                }
+            }
+        }
+
+        if(flag==false || !stack.isEmpty()){
+            System.out.print("Not Valid Parentheses");
+        }
+        else{
+            System.out.print("Valid Parentheses");
+        }
+    }
+}
