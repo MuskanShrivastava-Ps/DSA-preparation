@@ -1,0 +1,19 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+// PS : The name of the public class has to be Main for the code to work
+
+public class Main{
+    public static void main(String[] args){
+         int[] num = {7,1,5,3,6,4};
+
+        int max = 0;
+        int min = Integer.MAX_VALUE;
+
+        for(int i = 0; i<num.length; i++){
+              max = Math.max(max,num[i]-min);
+              min = Math.min(min,num[i]);
+        }
+
+        System.out.print(max);
+    }
+}  
