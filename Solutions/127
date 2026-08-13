@@ -1,0 +1,56 @@
+//iterative
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+// PS : The name of the public class has to be Main for the code to work
+
+public class Main {
+    public static void main(String[] args) {
+        int n = 35;
+
+        long a = 0;
+        long b = 1;
+
+        if(n==a || n==b){
+            System.out.println(n);
+        }
+        else{
+            int i = 2;
+
+            while(i<=n){
+                long temp = (long) a + b;
+                a = b;
+                b = temp;
+                i++;
+            }
+            System.out.print(b);
+        }
+    }
+}
+
+
+
+//recursion
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+// PS : The name of the public class has to be Main for the code to work
+
+public class Main {
+    public static void main(String[] args) {
+         int n = 35;
+
+        int ans = fibo(n);
+        System.out.print(ans);
+    }
+
+    public static int fibo(int n){
+        if(n==0 || n==1){
+            return n;
+        }
+
+        if(n<0){
+            return 0;
+        }
+
+        return fibo(n-1) + fibo(n-2);
+    }
+}
