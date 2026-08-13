@@ -1,0 +1,32 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+// PS : The name of the public class has to be Main for the code to work
+
+public class Main{
+    public static void main(String[] args){
+        int[] num = {12,18,24,36};
+        int n = num.length;
+        int gcd = findGcd(num,n-1);
+        System.out.println(gcd);
+    }
+
+    public static int findGcd(int[] num, int n){
+        if(n==0){
+            return num[n];
+        }
+
+        int gcd = gcd(num[n],findGcd(num,n-1));
+        return gcd;
+    }
+
+    public static int gcd(int a, int b){
+
+        while(b!=0){
+            int rem = a%b;
+            a = b;
+            b = rem;
+        }
+
+        return a;
+    }
+}
