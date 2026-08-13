@@ -1,0 +1,36 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+// PS : The name of the public class has to be Main for the code to work
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+           List<Integer> list = new ArrayList<>();
+
+          enqueue(list,1);
+          enqueue(list,2);
+          enqueue(list,3);
+          int front = front(list);
+          int dequeue = dequeue(list);
+          int size = size(list);
+
+         System.out.print("Front:"+front+"  "+"Dequeue:"+dequeue+"  "+"Size:"+size);
+    }
+
+    public static void enqueue(List<Integer> list, int n){
+        list.add(n);
+    }
+
+    public static int front(List<Integer> list){
+        return list.get(0);
+    }
+
+    public static int dequeue(List<Integer> list){
+        int value = list.get(0);
+        list.remove(0);
+         return value;
+    }
+
+    public static int size(List<Integer> list){
+        return list.size();
+    }
+}
