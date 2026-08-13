@@ -1,0 +1,32 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+// PS : The name of the public class has to be Main for the code to work
+
+public class Main {
+    public static void main(String[] args) {
+    int[] values = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+    String[] roman  = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+
+        int n = 58;
+
+        String romanValue = findRoman(n,values,roman);
+        System.out.print("Roman:  " + romanValue+" ");
+    }
+
+    public static String findRoman(int n, int[] value, String[] roman){
+        StringBuilder sb = new StringBuilder();
+        int num = n;
+        while(num>0){
+            int i = 0;
+            while(i<value.length){
+                 if(num>=value[i]){
+                     break;
+                 }
+                i++;
+            }
+            num = num - value[i];
+            sb.append(roman[i]);
+        }
+        return sb.toString();
+    }
+}
