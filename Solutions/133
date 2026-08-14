@@ -1,0 +1,36 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+// PS : The name of the public class has to be Main for the code to work
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int N = 30;
+
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        
+        for(int i = 2; i<=N; i++){
+             int num = i;
+            List<Integer> list2 = new ArrayList<>();
+            list2.add(num);
+            while(num!=1){
+                int sum = 0;
+                while(num>0){
+                    int rem = num%10;
+                    sum+=(int)(Math.pow(rem,2));
+                    num/=10;
+                }
+                num = sum;
+                if(list2.contains(num)){
+                    break;
+                }
+                list2.add(num);
+            }
+            if(num==1){
+                list.add(i);
+            }
+        }
+
+        System.out.print(list);
+    }
+}
