@@ -1,0 +1,32 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+// PS : The name of the public class has to be Main for the code to work
+
+public class Main{
+    public static void main(String[] args){
+        int[] num = {1,2,5};
+        int amount = 5;
+        int n = num.length;
+        int count = find(num,amount,n,0);
+        System.out.print(count);
+    }
+
+    public static int find(int[] num, int amount, int n, int indx){
+        if(indx==n){
+            return 0;
+        }
+        if(amount==0){
+            return 1;
+        }
+        if(amount<0){
+            return 0;
+        }
+        int count = 0;
+
+       count+=find(num,amount-num[indx],n,indx);
+       count+=find(num,amount,n,indx+1);
+        return count;
+    }
+}
+
+
