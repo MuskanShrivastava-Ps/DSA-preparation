@@ -23,3 +23,42 @@ public class Main{
         System.out.print(val);
     }
 }
+
+
+
+
+//other way
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+// PS : The name of the public class has to be Main for the code to work
+
+public class Main {
+    public static void main(String[] args) {
+        int[][] matrix = {{1,2},{2,3}};
+
+        int[] num = matrix[0];
+
+        int r = num[0];
+        int m = num[1];
+
+        for(int i = 1; i<matrix.length; i++){
+              int[] array = merge(r,m,matrix[i][0],matrix[i][1]);
+              r = array[0];
+             m = array[1];
+        }
+        System.out.print(r);
+    }
+
+
+    public static int[] merge(int r1, int m1, int r2, int m2){
+        int val = r1;
+
+        while(val%m2!=r2){
+              val+=m1;
+        }
+
+        int newm = m1 * m2;
+
+        return new int[]{val,newm};
+    }
+}
