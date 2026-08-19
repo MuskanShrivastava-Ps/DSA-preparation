@@ -1,0 +1,22 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+// PS : The name of the public class has to be Main for the code to work
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        String encode = "KHOOR";
+        List<String> list = new ArrayList<>();
+        for(int i = 0; i<26; i++){
+              StringBuilder sb = new StringBuilder();
+              for(int j = 0; j<encode.length(); j++){
+                    int index = encode.charAt(j) - 0;
+                    int newindx = ((index - i) + 26)%26;
+                   char ch = (char) ('A'+ newindx);
+                    sb.append(ch);
+              }
+              list.add(sb.toString());
+        }
+
+        System.out.print(list);
+    }
+}
