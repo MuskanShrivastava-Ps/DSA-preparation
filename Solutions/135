@@ -1,0 +1,36 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+// PS : The name of the public class has to be Main for the code to work
+
+public class Main {
+    public static void main(String[] args) {
+        int n = 20;
+        int factorise = 12;
+
+        int[] sieve = new int[n+1];
+        boolean[] mark = new boolean[n+1];
+
+        for(int i = 2; i<=n; i++){
+              if(mark[i]==false){
+                  sieve[i] = i;
+                  int num = i;
+                  while(num+i<=n && mark[num+i]==false){
+                         num = num + i;
+                         mark[num] = true;
+                         sieve[num] = i;
+                  }
+              }
+        }
+
+        int find = factorise;
+
+        while(find>1){
+              System.out.print(sieve[find]);
+              find = find / sieve[find];
+              if(find!=1){
+                  System.out.print("*");
+              }
+        }
+        
+    }
+}
